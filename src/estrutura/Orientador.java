@@ -16,6 +16,42 @@ public class Orientador extends Coordenador{
 		
 	}
 	
+	public void criarGrupoDeEstudo(String nomeGrupo) {
+		
+	}
+	
+	public void editarGrupoDeEstudo() {
+		
+	}
+	
+	public void adicionarDiscenteGrupo() {
+		
+	}
+
+	public String getSiape() {
+		return siape;
+	}
+
+	public void setSiape(String siape) {
+		this.siape = siape;
+	}
+
+	public String getInstitutoVinculado() {
+		return institutoVinculado;
+	}
+
+	public void setInstitutoVinculado(String institutoVinculado) {
+		this.institutoVinculado = institutoVinculado;
+	}
+
+	public List<Grupo_de_estudo> getGruposDeEstudo() {
+		return gruposDeEstudo;
+	}
+
+	public void setGruposDeEstudo(List<Grupo_de_estudo> gruposDeEstudo) {
+		this.gruposDeEstudo = gruposDeEstudo;
+	}
+	
 	
 
 }
