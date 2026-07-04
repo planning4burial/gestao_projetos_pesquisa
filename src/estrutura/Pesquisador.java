@@ -15,27 +15,69 @@ public class Pesquisador {
 		this.id_institucional = id_institucional;
 	}
 	
-	public void realizar_login(String email, String senha) {
+	public void realizarLogin(String email, String senha) {
 		
 	}
 	
-	public void realizar_cadastro(String email, String senha) {
+	public void realizarCadastro(String email, String senha) {
 		
 	}
 	
-	public void visualiza_tarefa() {
+	public void visualizaTarefa() {
 		
 	}
 	
-	public void atualizar_status_tarefa() {
+	public void atualizarStatusTarefa() {
 		
 	}
 	
-	public void fazer_upload_material() {
+	public void fazerUploadMaterial() {
 		
 	}
 	
-	public void enviar_relatorio_tarefa() {
+	public void enviarRelatorioTarefa() {
 		
 	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public int getIdade() {
+		return idade;
+	}
+
+	public void setIdade(int idade) {
+		this.idade = idade;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
+	public String getId_institucional() {
+		return id_institucional;
+	}
+
+	public void setId_institucional(String id_institucional) {
+		this.id_institucional = id_institucional;
+	}
+	
+	
 }
