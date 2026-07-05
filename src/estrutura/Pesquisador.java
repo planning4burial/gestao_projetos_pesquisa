@@ -5,14 +5,14 @@ public class Pesquisador {
 	protected int idade;
 	protected String email;
 	protected String senha;
-	protected String id_institucional;
+	protected String idInstitucional;
 	
-	public Pesquisador(String nome, int idade, String email, String senha, String id_institucional) {
+	public Pesquisador(String nome, int idade, String email, String senha, String idInstitucional) {
 		this.nome = nome;
 		this.idade = idade;
 		this.email = email;
 		this.senha = senha;
-		this.id_institucional = id_institucional;
+		this.idInstitucional = idInstitucional;
 	}
 	
 	public void realizarLogin(String email, String senha) {
@@ -31,8 +31,9 @@ public class Pesquisador {
 		
 	}
 	
-	public void fazerUploadMaterial() {
-		
+	public void fazerUploadMaterial(String nome, String tipoArquivo, String dataUpload) {
+		Material m = new Material(nome, tipoArquivo, dataUpload);
+		Material.getListaMateriais().add(m);
 	}
 	
 	public void enviarRelatorioTarefa() {
@@ -71,13 +72,11 @@ public class Pesquisador {
 		this.senha = senha;
 	}
 
-	public String getId_institucional() {
-		return id_institucional;
+	public String getIdInstitucional() {
+		return idInstitucional;
 	}
 
-	public void setId_institucional(String id_institucional) {
-		this.id_institucional = id_institucional;
+	public void setIdInstitucional(String id_institucional) {
+		this.idInstitucional = id_institucional;
 	}
-	
-	
 }
