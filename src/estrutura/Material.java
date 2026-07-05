@@ -7,6 +7,7 @@ public class Material {
 	private int idMaterial;
 	private String tipoArquivo;
 	private String dataUpload;
+	private Pesquisador autorUpload;
 	static List<Material> listaMateriais = new ArrayList<>();
 	static int totalMateriais = 0;
 	
@@ -18,36 +19,44 @@ public class Material {
 		this.idMaterial = totalMateriais;
 	}
 
-	public String getNome_material() {
+	public String getNomeMaterial() {
 		return nomeMaterial;
 	}
 
-	public void setNome_material(String nome_material) {
-		this.nomeMaterial = nome_material;
+	public void setNomeMaterial(String nomeMaterial) {
+		this.nomeMaterial = nomeMaterial;
 	}
 
-	public int getId_material() {
+	public int getIdMaterial() {
 		return idMaterial;
 	}
 
-	public void setId_material(int id_material) {
-		this.idMaterial = id_material;
+	public void setIdMaterial(int idMaterial) {
+		this.idMaterial = idMaterial;
 	}
 
-	public String getTipo_arquivo() {
+	public String getTipoArquivo() {
 		return tipoArquivo;
 	}
 
-	public void setTipo_arquivo(String tipo_arquivo) {
-		this.tipoArquivo = tipo_arquivo;
+	public void setTipoArquivo(String tipoArquivo) {
+		this.tipoArquivo = tipoArquivo;
 	}
 
-	public String getData_upload() {
+	public String getDataUpload() {
 		return dataUpload;
 	}
 
-	public void setData_upload(String data_upload) {
-		this.dataUpload = data_upload;
+	public void setDataUpload(String dataUpload) {
+		this.dataUpload = dataUpload;
+	}
+
+	public Pesquisador getAutorUpload() {
+		return autorUpload;
+	}
+
+	public void setAutorUpload(Pesquisador autorUpload) {
+		this.autorUpload = autorUpload;
 	}
 
 	public static List<Material> getListaMateriais() {
