@@ -27,6 +27,10 @@ public class Orientador extends Coordenador{
 		
 	}
 
+	public Evento criarEvento(int idEvento, String descricao, String prazoTexto) {
+		Evento novoEvento = new Evento(idEvento, descricao, prazoTexto);
+		return novoEvento;
+	}
 	public String getSiape() {
 		return siape;
 	}
