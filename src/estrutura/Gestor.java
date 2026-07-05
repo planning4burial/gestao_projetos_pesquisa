@@ -7,9 +7,7 @@ public class Gestor extends Orientador {
         super(nome, idade, email, senha, idInstitucional,titulacao, areaAtuacao, limiteOrientados,siape, institutoVinculado);
     }
     //Alocar bolsas para grupos de pesquisa
-    public void alocacaoBolsa(Grupo_de_estudo grupo,
-                              double valorRecurso,
-                              int quantidadeBolsas) {
+    public void alocacaoBolsa(Grupo_de_estudo grupo,double valorRecurso,int quantidadeBolsas) {
 
         System.out.println("\n == ALOCAÇÃO DE BOLSAS ==");
         System.out.println("Gestor: " + getNome());
