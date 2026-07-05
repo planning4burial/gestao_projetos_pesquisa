@@ -13,7 +13,6 @@ public class Orientador extends Coordenador{
 		this.siape = siape;
 		this.institutoVinculado = institutoVinculado;
 		this.gruposDeEstudo = new ArrayList<>();
-		
 	}
 	
 	public void criarGrupoDeEstudo(String nomeGrupo) {

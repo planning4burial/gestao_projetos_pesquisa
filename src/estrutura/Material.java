@@ -44,6 +44,4 @@ public class Material {
 	public void setData_upload(String data_upload) {
 		this.data_upload = data_upload;
 	}
-	
-	
 }
