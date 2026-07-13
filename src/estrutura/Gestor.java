@@ -1,3 +1,5 @@
+package estrutura;
+
 import java.util.List;
 
 public class Gestor extends Orientador {
