@@ -1,6 +1,6 @@
 package estrutura;
 
-public abstract class Usuario {
+public abstract class Usuario implements Autenticavel {
 	protected String nome;
 	protected String email;
 	protected int idade;

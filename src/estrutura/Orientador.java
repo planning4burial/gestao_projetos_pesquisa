@@ -7,9 +7,9 @@ public class Orientador extends Coordenador{
 	protected String institutoVinculado;
 	protected List<Grupo_de_estudo> gruposDeEstudo;
 
-	public Orientador(String nome, int idade, String email, String senha, String id_institucional, String titulacao,
+	public Orientador(String nome, int idade, String email, String senha, String idInstitucional, String titulacao,
 			String areaAtuacao, int limiteOrientados, String siape, String institutoVinculado) {
-		super(nome, idade, email, senha, id_institucional, titulacao, areaAtuacao, limiteOrientados);
+		super(nome, email, idade, senha, idInstitucional, titulacao, areaAtuacao, limiteOrientados);
 		this.siape = siape;
 		this.institutoVinculado = institutoVinculado;
 		this.gruposDeEstudo = new ArrayList<>();

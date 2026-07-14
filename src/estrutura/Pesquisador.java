@@ -1,82 +1,80 @@
 package estrutura;
+import java.util.ArrayList;
+import java.util.List;
 
-public class Pesquisador {
-	protected String nome;
-	protected int idade;
-	protected String email;
-	protected String senha;
-	protected String idInstitucional;
+public class Pesquisador extends Usuario {
 	
-	public Pesquisador(String nome, int idade, String email, String senha, String idInstitucional) {
-		this.nome = nome;
-		this.idade = idade;
-		this.email = email;
-		this.senha = senha;
-		this.idInstitucional = idInstitucional;
-	}
-	
-	public void realizarLogin(String email, String senha) {
+
+	protected List <Tarefas> tarefas = new ArrayList <> ();
+	protected List <Material> materiais = new ArrayList <> ();
+	public Pesquisador(String nome, String email, int idade, String senha, String idInstitucional) {
+		super(nome, email, idade, senha, idInstitucional);
 		
 	}
 	
-	public void realizarCadastro(String email, String senha) {
+	
+	
+
+
+
+
+
+
+
+
+	public void visualizarTarefa () {
+		System.out.println("\n== TAREFAS DE " + nome.toUpperCase() + " ==");
+		if (tarefas.isEmpty()) {
+			System.out.println("Nenhuma tarefa alocada.");
+			return;
+
+	}
+		
+		for (Tarefas t : tarefas) {
+			System.out.println(t);
+		}
+	}
+	
+	public void atualizarStatusTarefa (Tarefas tarefa, String novoStatus) {
+		if (!tarefas.contains(tarefa)) {
+			System.out.println("Essa tarefa não pertence a " +  nome );
+		}
+		tarefa.setStatus(novoStatus);
+		System.out.println("Status da tarefa \"" + tarefa.getTitulo() + "\" atualizado para: " + novoStatus);
 		
 	}
 	
-	public void visualizaTarefa() {
-		
-	}
-	
-	public void atualizarStatusTarefa() {
-		
-	}
-	
-	public void fazerUploadMaterial(String nome, String tipoArquivo, String dataUpload) {
-		Material m = new Material(nome, tipoArquivo, dataUpload);
+	public void fazerUploadMaterial(String nomeArquivo, String tipoArquivo, String dataUpload) {
+		Material m = new Material(nomeArquivo,tipoArquivo, dataUpload );
+		m.setAutorUpload(this);
 		Material.getListaMateriais().add(m);
+		System.out.println(nome + " enviou o material: " + nomeArquivo);
+		
+		}
+	public void enviarRelatorio(String conteudo) {
+		System.out.println(nome + "enviou relatório de atividade" + conteudo);
 	}
 	
-	public void enviarRelatorioTarefa() {
+	public void receberTarefa (Tarefas tarefa) {
+		this.tarefas.add(tarefa);
+	}
+	
+	public List<Tarefas> getTarefas() {
+		return tarefas;
 		
 	}
-
-	public String getNome() {
-		return nome;
+	
+	public List<Material> getMateriais() {
+		return materiais ;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public int getIdade() {
-		return idade;
-	}
-
-	public void setIdade(int idade) {
-		this.idade = idade;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getSenha() {
-		return senha;
-	}
-
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
-
-	public String getIdInstitucional() {
-		return idInstitucional;
-	}
-
-	public void setIdInstitucional(String id_institucional) {
-		this.idInstitucional = id_institucional;
+	@Override
+	public void exibirPainel() {
+		// TODO Auto-generated method stub
+		System.out.println("\n===== PAINEL DO PESQUISADOR =====");
+		System.out.println("Nome: " + nome + " | Email: " + email);
+		visualizarTarefa();
 	}
 }
+
+	
