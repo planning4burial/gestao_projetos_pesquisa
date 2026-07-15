@@ -9,7 +9,8 @@ public class Grupo_de_estudo {
     protected String pesquisadorResponsavelDiscente; 
     protected String areaDeEstudo; 
     private List<Pesquisador> pesquisadores;
-    // Construtor 
+
+    //construtor para criar um grupo com uma lista vazia de pesquisadores
    public Grupo_de_estudo(int idGrupo,String nomeGrupo,String pesquisadorResponsavelDiscente,String areaDeEstudo) {
 
     this.idGrupo = idGrupo;
@@ -17,7 +18,19 @@ public class Grupo_de_estudo {
     this.pesquisadorResponsavelDiscente = pesquisadorResponsavelDiscente;
     this.areaDeEstudo = areaDeEstudo;
     this.pesquisadores = new ArrayList<>();
-}
+    }
+
+    //construtor para criar um grupo com uma lista de pesquisadores ja definida antes
+    public Grupo_de_estudo(int idGrupo, String nomeGrupo, String pesquisadorResponsavelDiscente, String areaDeEstudo, List<Pesquisador> pesquisadores) {
+
+        this.idGrupo = idGrupo;
+        this.nomeGrupo = nomeGrupo;
+        this.pesquisadorResponsavelDiscente = pesquisadorResponsavelDiscente;
+        this.areaDeEstudo = areaDeEstudo;
+        this.pesquisadores = (pesquisadores != null)
+                ? pesquisadores
+                : new ArrayList<>();
+    }
 
     //Adicionar e remover pesquisadores do grupo
    public void adicionarPesquisador(Pesquisador pesquisador) {
