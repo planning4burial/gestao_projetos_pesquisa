@@ -22,20 +22,8 @@ public abstract class Usuario implements Autenticavel {
 		}
 		System.out.println("Email ou senha incorretos. ");
 		return false;	
-		
 	}
 
-	@Override
-	public boolean realizarLogin(String emailDigitado, String senhaDigitada) {
-		if (this.email.equals(emailDigitado) && this.senha.equals(senhaDigitada)) {
-			System.out.println("Login realizado com sucesso!");
-			return true;
-		}
-		System.out.println("Email ou senha incorretos. ");
-		return false;	
-		
-	}
-	
 	@Override
 	public void realizarLogout() {
     	System.out.println("Logout realizado com sucesso!");
