@@ -15,8 +15,10 @@ public class Orientador extends Coordenador{
 		this.gruposDeEstudo = new ArrayList<>();
 	}
 	
-	public void criarGrupoDeEstudo(String nomeGrupo) {
-		
+	public Grupo_de_estudo criarGrupoDeEstudo(int idGrupo, String nomeGrupo, String pesquisadorResponsavelDiscente, String areaDeEstudo) {
+		Grupo_de_estudo grupo = new Grupo_de_estudo(idGrupo, nomeGrupo, pesquisadorResponsavelDiscente, areaDeEstudo);
+		gruposDeEstudo.add(grupo);
+		return grupo;
 	}
 	
 	public void editarGrupoDeEstudo() {
