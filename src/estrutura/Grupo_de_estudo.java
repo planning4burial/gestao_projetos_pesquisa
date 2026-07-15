@@ -4,21 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Grupo_de_estudo {
-    protected int grupoInt; 
+    protected int idGrupo;
     protected String nomeGrupo; 
     protected String pesquisadorResponsavelDiscente; 
     protected String areaDeEstudo; 
     private List<Pesquisador> pesquisadores;
     // Construtor 
-   public Grupo_de_estudo(int grupoInt,String nomeGrupo,String pesquisadorResponsavelDiscente,String areaDeEstudo,List<Pesquisador> pesquisadores) {
+   public Grupo_de_estudo(int idGrupo,String nomeGrupo,String pesquisadorResponsavelDiscente,String areaDeEstudo) {
 
-    this.grupoInt = grupoInt;
+    this.idGrupo = idGrupo;
     this.nomeGrupo = nomeGrupo;
     this.pesquisadorResponsavelDiscente = pesquisadorResponsavelDiscente;
     this.areaDeEstudo = areaDeEstudo;
-    this.pesquisadores = (pesquisadores != null)
-            ? pesquisadores
-            : new ArrayList<>();
+    this.pesquisadores = new ArrayList<>();
 }
 
     //Adicionar e remover pesquisadores do grupo
@@ -39,12 +37,12 @@ public class Grupo_de_estudo {
     }
     
     //Getters e Setters
-    public int getGrupoInt() {
-        return grupoInt;
+    public int getIdGrupo() {
+        return idGrupo;
     }
 
-    public void setGrupoInt(int grupoInt) {
-        this.grupoInt = grupoInt;
+    public void setIdGrupo(int idGrupo) {
+        this.idGrupo = idGrupo;
     }
 
     public String getNomeGrupo() {
@@ -76,6 +74,8 @@ public class Grupo_de_estudo {
     }
 
     public void setPesquisadores(List<Pesquisador> pesquisadores) {
-        this.pesquisadores = pesquisadores;
+       if(pesquisadores != null){
+           this.pesquisadores = pesquisadores;
+       }
     }
 }
