@@ -6,11 +6,15 @@ public class Subgrupo_pesquisa {
 	private String nome;
 	private String objetoDeEstudo;
 	private List<Pesquisador> membros;
+	private Grupo_de_estudo grupo;
+
 	public Subgrupo_pesquisa(int id, String nome, String objetoDeEstudo, List<Pesquisador> membros) {
 		this.id = id;
 		this.nome = nome;
 		this.objetoDeEstudo = objetoDeEstudo;
-		this.membros = new ArrayList<>();
+		this.membros = (membros != null)
+				? membros
+				: new ArrayList<>();
 	}
 	
 	public void adicionarMembro(Pesquisador p) {
@@ -52,7 +56,12 @@ public class Subgrupo_pesquisa {
 	public void setMembros(List<Pesquisador> membros) {
 		this.membros = membros;
 	}
-	
-	
 
+	public Grupo_de_estudo getGrupo() {
+		return grupo;
+	}
+
+	public void setGrupo(Grupo_de_estudo grupo) {
+		this.grupo = grupo;
+	}
 }
