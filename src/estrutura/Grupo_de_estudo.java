@@ -10,6 +10,8 @@ public class Grupo_de_estudo {
     protected String areaDeEstudo; 
     private List<Pesquisador> pesquisadores;
 
+    private List<Subgrupo_pesquisa> subgrupos;
+
     //construtor para criar um grupo com uma lista vazia de pesquisadores
    public Grupo_de_estudo(int idGrupo,String nomeGrupo,String pesquisadorResponsavelDiscente,String areaDeEstudo) {
 
@@ -18,6 +20,8 @@ public class Grupo_de_estudo {
     this.pesquisadorResponsavelDiscente = pesquisadorResponsavelDiscente;
     this.areaDeEstudo = areaDeEstudo;
     this.pesquisadores = new ArrayList<>();
+
+    this.subgrupos = new ArrayList<>();
     }
 
     //construtor para criar um grupo com uma lista de pesquisadores ja definida antes
@@ -30,10 +34,12 @@ public class Grupo_de_estudo {
         this.pesquisadores = (pesquisadores != null)
                 ? pesquisadores
                 : new ArrayList<>();
+
+        this.subgrupos = new ArrayList<>();
     }
 
     //Adicionar e remover pesquisadores do grupo
-   public void adicionarPesquisador(Pesquisador pesquisador) {
+    public void adicionarPesquisador(Pesquisador pesquisador) {
         if (pesquisador != null && !this.pesquisadores.contains(pesquisador)) {
             this.pesquisadores.add(pesquisador);
             System.out.println("Pesquisador '" + pesquisador.getNome() + "' adicionado com sucesso ao grupo " + this.nomeGrupo + ".");
@@ -48,7 +54,20 @@ public class Grupo_de_estudo {
             System.out.println("Este pesquisador não faz parte do grupo " + this.nomeGrupo + ".");
         }
     }
-    
+
+    public void adicionarSubgrupo(Subgrupo_pesquisa subgrupo) {
+        if (subgrupo != null && !subgrupos.contains(subgrupo)) {
+            subgrupos.add(subgrupo);
+            subgrupo.setGrupo(this);
+        }
+    }
+
+    public void removerSubgrupo(Subgrupo_pesquisa subgrupo) {
+        if (subgrupos.remove(subgrupo)) {
+            subgrupo.setGrupo(null);
+        }
+    }
+
     //Getters e Setters
     public int getIdGrupo() {
         return idGrupo;
@@ -90,5 +109,8 @@ public class Grupo_de_estudo {
        if(pesquisadores != null){
            this.pesquisadores = pesquisadores;
        }
+    }
+    public List<Subgrupo_pesquisa> getSubgrupos() {
+        return subgrupos;
     }
 }
