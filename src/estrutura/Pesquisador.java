@@ -4,24 +4,14 @@ import java.util.List;
 
 public class Pesquisador extends Usuario {
 	
-
 	protected List <Tarefas> tarefas = new ArrayList <> ();
 	protected List <Material> materiais = new ArrayList <> ();
+	
 	public Pesquisador(String nome, String email, int idade, String senha, String idInstitucional) {
 		super(nome, email, idade, senha, idInstitucional);
 		
 	}
 	
-	
-	
-
-
-
-
-
-
-
-
 	public void visualizarTarefa () {
 		System.out.println("\n== TAREFAS DE " + nome.toUpperCase() + " ==");
 		if (tarefas.isEmpty()) {
@@ -45,9 +35,9 @@ public class Pesquisador extends Usuario {
 	}
 	
 	public void fazerUploadMaterial(String nomeArquivo, String tipoArquivo, String dataUpload) {
-		Material m = new Material(nomeArquivo,tipoArquivo, dataUpload );
+		Material m = new Material(nomeArquivo,tipoArquivo, dataUpload);
 		m.setAutorUpload(this);
-		Material.getListaMateriais().add(m);
+		materiais.add(m);
 		System.out.println(nome + " enviou o material: " + nomeArquivo);
 		
 		}

@@ -31,7 +31,7 @@ public class Gestor extends Orientador {
 
         for (Grupo_de_estudo grupo : grupos) {
             System.out.println("--------------------------------");
-            System.out.println("ID: " + grupo.getGrupoInt());
+            System.out.println("ID: " + grupo.getIdGrupo());
             System.out.println("Nome: " + grupo.getNomeGrupo());
             System.out.println("Área: " + grupo.getAreaDeEstudo());
         }
@@ -58,7 +58,7 @@ public class Gestor extends Orientador {
         for (Grupo_de_estudo grupo : grupos) {
 
             System.out.println("----------------------------------------");
-            System.out.println("ID: " + grupo.getGrupoInt());
+            System.out.println("ID: " + grupo.getIdGrupo());
             System.out.println("Grupo: " + grupo.getNomeGrupo());
             System.out.println("Área: " + grupo.getAreaDeEstudo());
             System.out.println("Responsável: " + grupo.getPesquisadorResponsavelDiscente());
