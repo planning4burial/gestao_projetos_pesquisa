@@ -70,5 +70,4 @@ public abstract class Usuario implements Autenticavel {
 	public void setIdInstitucional(String idInstitucional) {
 		this.idInstitucional = idInstitucional;
 	}
-
 }
