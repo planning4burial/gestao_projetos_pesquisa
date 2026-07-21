@@ -18,6 +18,7 @@ public class Coordenador extends Pesquisador {
 
 	public Tarefas criarTarefa(String titulo, String descricao, String prazo, Pesquisador responsavel) {
 		Tarefas tarefa = new Tarefas(titulo, descricao, prazo);
+
 		System.out.println(nome + " criou a tarefa \"" + titulo + "\".");
 		if (responsavel != null) {
 			responsavel.receberTarefa(tarefa);
@@ -86,5 +87,5 @@ public class Coordenador extends Pesquisador {
 		System.out.println("Subgrupo: " + (subgrupo == null ? "nenhum" : subgrupo.getNome()));
 		visualizarTarefa();
 	}
-
 }
+

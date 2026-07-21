@@ -1,4 +1,6 @@
-# Projeto Programação de Computadores II - Sistema de Gerenciamento de Grupos de Pesquisa e Alocação de Tarefas
+# GestLab
+
+### Projeto Programação de Computadores II - Sistema de Gerenciamento de Grupos de Pesquisa e Alocação de Tarefas
 
 ## Integrantes
 
