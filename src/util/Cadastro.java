@@ -103,6 +103,7 @@ public class Cadastro {
 		String senha = s.nextLine();
 
 		return new Orientador(nome, idade, email, senha, id_institucional, titulacao, areaAtuacao, limiteOrientados, siape, institutoVinculado);
+	
 	}
 
 	public static Gestor CadastrarGestor(Scanner s) {
@@ -142,5 +143,6 @@ public class Cadastro {
 		String senha = s.nextLine();
 
 		return new Gestor(nome, idade, email, senha, id_institucional, titulacao, areaAtuacao, limiteOrientados, siape, institutoVinculado);
+	
 	}
 }
