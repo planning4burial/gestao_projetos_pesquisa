@@ -17,12 +17,6 @@ public class Orientador extends Coordenador{
 
 	public Grupo_de_estudo criarGrupoDeEstudo(int idGrupo, String nomeGrupo, String pesquisadorResponsavelDiscente, String areaDeEstudo, List<Pesquisador> pesquisadores) {
 		Grupo_de_estudo grupo = new Grupo_de_estudo(idGrupo, nomeGrupo, pesquisadorResponsavelDiscente, areaDeEstudo, pesquisadores);
-		gruposDeEstudo.add(grupo);
-		return grupo;
-	}
-
-	public Grupo_de_estudo criarGrupoDeEstudo(int idGrupo, String nomeGrupo, String pesquisadorResponsavelDiscente, String areaDeEstudo, List<Pesquisador> pesquisadores) {
-		Grupo_de_estudo grupo = new Grupo_de_estudo(idGrupo, nomeGrupo, pesquisadorResponsavelDiscente, areaDeEstudo, pesquisadores);
 		gruposDeEstudo.add(grupo); //
 		return grupo;
 	}
