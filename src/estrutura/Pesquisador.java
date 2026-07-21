@@ -17,8 +17,7 @@ public class Pesquisador extends Usuario {
 		if (tarefas.isEmpty()) {
 			System.out.println("Nenhuma tarefa alocada.");
 			return;
-	}
-		
+		}
 		for (Tarefas t : tarefas) {
 			System.out.println(t);
 		}
