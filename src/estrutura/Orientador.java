@@ -21,17 +21,11 @@ public class Orientador extends Coordenador{
 		return grupo;
 	}
 	
-	public void adicionarpesquisadorGrupo(Grupo_de_estudo grupo, Pesquisador pesquisador) {
+	public void adicionarPesquisadorGrupo(Grupo_de_estudo grupo, Pesquisador pesquisador) {
 		grupo.adicionarPesquisador(pesquisador);
 		System.out.println(pesquisador.getNome() + " foi adicionado ao grupo " + grupo.getNomeGrupo());
 	}
 	
-	public void adicionarDiscenteGrupo(Grupo_de_estudo grupo, Pesquisador pesquisador) {
-    grupo.adicionarPesquisador(pesquisador);
-    System.out.println(pesquisador.getNome() + " foi adicionado ao grupo " + grupo.getNomeGrupo());
-
-	}
-
 	public Evento criarEvento(int idEvento, String descricao, String prazoTexto) {
 		Evento novoEvento = new Evento(idEvento, descricao, prazoTexto);
 		return novoEvento;
