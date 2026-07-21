@@ -60,6 +60,7 @@ public class Orientador extends Coordenador{
 		this.gruposDeEstudo = gruposDeEstudo;
 	}
 	
-	
-
+	public void setRelatorioValido(Relatorio r) {
+		r.setValido(true);
+	}
 }
