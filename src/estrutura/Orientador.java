@@ -14,12 +14,6 @@ public class Orientador extends Coordenador{
 		this.institutoVinculado = institutoVinculado;
 		this.gruposDeEstudo = new ArrayList<>();
 	}
-	
-	public Grupo_de_estudo criarGrupoDeEstudo(int idGrupo, String nomeGrupo, String pesquisadorResponsavelDiscente, String areaDeEstudo) {
-		Grupo_de_estudo grupo = new Grupo_de_estudo(idGrupo, nomeGrupo, pesquisadorResponsavelDiscente, areaDeEstudo);
-		gruposDeEstudo.add(grupo);
-		return grupo;
-	}
 
 	public Grupo_de_estudo criarGrupoDeEstudo(int idGrupo, String nomeGrupo, String pesquisadorResponsavelDiscente, String areaDeEstudo, List<Pesquisador> pesquisadores) {
 		Grupo_de_estudo grupo = new Grupo_de_estudo(idGrupo, nomeGrupo, pesquisadorResponsavelDiscente, areaDeEstudo, pesquisadores);
@@ -32,6 +26,10 @@ public class Orientador extends Coordenador{
 	}
 	
 	public void adicionarDiscenteGrupo() {
+		
+	}
+	
+	public void adicionarPesquisadorGrupo() {
 		
 	}
 
