@@ -1,11 +1,13 @@
 package util;
 
 import java.util.Scanner;
+import java.util.Date;
 
 import estrutura.Coordenador;
 import estrutura.Gestor;
 import estrutura.Orientador;
 import estrutura.Pesquisador;
+import estrutura.Relatorio;
 
 public class Cadastro {
 	
@@ -142,5 +144,21 @@ public class Cadastro {
 		String senha = s.nextLine();
 
 		return new Gestor(nome, idade, email, senha, id_institucional, titulacao, areaAtuacao, limiteOrientados, siape, institutoVinculado);
+	}
+	
+	public static Relatorio CadastrarRelatorio(Scanner s) {
+		
+		System.out.println("Digite o titulo do relatorio: ");
+		String titulo = s.nextLine();
+		
+		System.out.println("Digite o conteudo do relatorio:\n");
+		String conteudo = s.nextLine();
+		
+		Date dataGeracao = new Date();
+		
+		System.out.println("Digite seu nome: ");
+		String criador = s.nextLine();
+		
+		return new Relatorio(titulo, conteudo, dataGeracao, criador);
 	}
 }
