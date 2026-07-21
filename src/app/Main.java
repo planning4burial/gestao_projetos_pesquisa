@@ -1,16 +1,24 @@
 package app;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import estrutura.Grupo_de_estudo;
-import estrutura.Usuario;
+
+import estrutura.Coordenador;
+import estrutura.Gestor;
+import estrutura.Orientador;
+import estrutura.Pesquisador;
 
 public class Main {
-    static Scanner s = new Scanner(System.in);
-    static List<Usuario> usuarios = new ArrayList<>();
-    static List<Grupo_de_estudo> grupos = new ArrayList<>();
 
-    public static void main(String[] args) {
-    	
-    }
+	public static void main(String[] args) {
+		List<Pesquisador> pesquisadores = new ArrayList<>();
+		List<Coordenador> coordenadores = new ArrayList<>();
+		List<Orientador> orientadores = new ArrayList<>();
+		List<Gestor> gestores = new ArrayList<>();
+
+		Scanner s = new Scanner(System.in);
+
+	}
+
 }
