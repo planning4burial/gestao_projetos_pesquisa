@@ -6,6 +6,7 @@ public class Orientador extends Coordenador{
 	protected String siape;
 	protected String institutoVinculado;
 	protected List<Grupo_de_estudo> gruposDeEstudo;
+	protected List<Evento> eventos;
 
 	public Orientador(String nome, int idade, String email, String senha, String idInstitucional, String titulacao,
 			String areaAtuacao, int limiteOrientados, String siape, String institutoVinculado) {
@@ -13,6 +14,7 @@ public class Orientador extends Coordenador{
 		this.siape = siape;
 		this.institutoVinculado = institutoVinculado;
 		this.gruposDeEstudo = new ArrayList<>();
+		this.eventos = new ArrayList<>();
 	}
 
 	public Grupo_de_estudo criarGrupoDeEstudo(int idGrupo, String nomeGrupo, String pesquisadorResponsavelDiscente, String areaDeEstudo, List<Pesquisador> pesquisadores) {
@@ -28,7 +30,16 @@ public class Orientador extends Coordenador{
 	
 	public Evento criarEvento(int idEvento, String descricao, String prazoTexto) {
 		Evento novoEvento = new Evento(idEvento, descricao, prazoTexto);
+		eventos.add(novoEvento);
 		return novoEvento;
+	}
+
+	public List<Evento> getEventos() {
+		return eventos;
+	}
+
+	public void adicionarEventoCarregado(Evento evento) {
+		this.eventos.add(evento);
 	}
 	public String getSiape() {
 		return siape;

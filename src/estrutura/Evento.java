@@ -35,4 +35,9 @@ public class Evento {
 	public void setPrazoFinal(LocalDate prazoFinal) {
 		this.prazoFinal = prazoFinal;
 	}
+
+	@Override
+	public String toString() {
+		return "[Evento #" + idEvento + "] " + descricao + " | Prazo final: " + prazoFinal;
+	}
 }

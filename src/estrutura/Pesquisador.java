@@ -39,8 +39,15 @@ public class Pesquisador extends Usuario {
 		System.out.println(nome + " enviou o material: " + nomeArquivo);
 		
 		}
-	public void enviarRelatorio(String conteudo) {
-		System.out.println(nome + "enviou relatório de atividade" + conteudo);
+	public Relatorio escreverRelatorioTarefa(Tarefas tarefa, String tituloRelatorio, String conteudo) {
+		if (!tarefas.contains(tarefa)) {
+			System.out.println("Essa tarefa não pertence a " + nome + ". Relatório não pode ser criado.");
+			return null;
+		}
+		Relatorio relatorio = new Relatorio(tituloRelatorio, conteudo, new java.util.Date(), nome, false);
+		tarefa.adicionarRelatorio(relatorio);
+		System.out.println(nome + " escreveu o relatório \"" + tituloRelatorio + "\" para a tarefa \"" + tarefa.getTitulo() + "\".");
+		return relatorio;
 	}
 	
 	public void receberTarefa (Tarefas tarefa) {
@@ -64,5 +71,3 @@ public class Pesquisador extends Usuario {
 		visualizarTarefa();
 	}
 }
-
-	
