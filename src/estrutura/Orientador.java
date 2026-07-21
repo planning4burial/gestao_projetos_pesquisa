@@ -2,8 +2,7 @@ package estrutura;
 
 import java.util.ArrayList;
 import java.util.List;
-
-public class Orientador extends Coordenador {
+public class Orientador extends Coordenador{
 	protected String siape;
 	protected String institutoVinculado;
 	protected List<Grupo_de_estudo> gruposDeEstudo;
@@ -16,30 +15,21 @@ public class Orientador extends Coordenador {
 		this.gruposDeEstudo = new ArrayList<>();
 	}
 
-	public Grupo_de_estudo criarGrupoDeEstudo(int idGrupo, String nomeGrupo, String pesquisadorResponsavelDiscente,
-			String areaDeEstudo, List<Pesquisador> pesquisadores) {
-		Grupo_de_estudo grupo = new Grupo_de_estudo(idGrupo, nomeGrupo, pesquisadorResponsavelDiscente, areaDeEstudo,
-				pesquisadores);
+	public Grupo_de_estudo criarGrupoDeEstudo(int idGrupo, String nomeGrupo, String pesquisadorResponsavelDiscente, String areaDeEstudo, List<Pesquisador> pesquisadores) {
+		Grupo_de_estudo grupo = new Grupo_de_estudo(idGrupo, nomeGrupo, pesquisadorResponsavelDiscente, areaDeEstudo, pesquisadores);
 		gruposDeEstudo.add(grupo); //
 		return grupo;
 	}
-
-	public void adicionarpesquisadorGrupo(Grupo_de_estudo grupo, Pesquisador pesquisador) {
+	
+	public void adicionarPesquisadorGrupo(Grupo_de_estudo grupo, Pesquisador pesquisador) {
 		grupo.adicionarPesquisador(pesquisador);
 		System.out.println(pesquisador.getNome() + " foi adicionado ao grupo " + grupo.getNomeGrupo());
 	}
-
-	public void adicionarDiscenteGrupo(Grupo_de_estudo grupo, Pesquisador pesquisador) {
-		grupo.adicionarPesquisador(pesquisador);
-		System.out.println(pesquisador.getNome() + " foi adicionado ao grupo " + grupo.getNomeGrupo());
-
-	}
-
+	
 	public Evento criarEvento(int idEvento, String descricao, String prazoTexto) {
 		Evento novoEvento = new Evento(idEvento, descricao, prazoTexto);
 		return novoEvento;
 	}
-
 	public String getSiape() {
 		return siape;
 	}
@@ -63,5 +53,8 @@ public class Orientador extends Coordenador {
 	public void setGruposDeEstudo(List<Grupo_de_estudo> gruposDeEstudo) {
 		this.gruposDeEstudo = gruposDeEstudo;
 	}
-
+	
+	public void setRelatorioValido(Relatorio r) {
+		r.setValido(true);
+	}
 }
