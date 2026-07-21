@@ -1,166 +1,69 @@
-package util;
+package estrutura;
 
-import java.util.Scanner;
 import java.util.Date;
 
-import estrutura.Coordenador;
-import estrutura.Gestor;
-import estrutura.Orientador;
-import estrutura.Pesquisador;
-import estrutura.Relatorio;
+public class Relatorio {
+	private String titulo;
+	private String conteudo;
+	private Date dataGeracao;
+	private String criador;
+	private Boolean valido;
 
-public class Cadastro {
-	
-	public static Pesquisador CadastrarPesquisador(Scanner s) {
-		
-		System.out.println("Digite seu nome: ");
-		String nome = s.nextLine();
-	
-		System.out.println("Digite sua idade: ");
-		int idade = s.nextInt();
-	
-		s.nextLine(); // limpando buffer
-	
-		System.out.println("Digite seu id institucional: ");
-		String id_institucional = s.nextLine();
-	
-		System.out.println("Digite seu email: ");
-		String email = s.nextLine();
-	
-		System.out.println("Crie uma senha: ");
-		String senha = s.nextLine();
-	
-		return new Pesquisador(nome, email, idade, senha, id_institucional);
-	
+	public Relatorio(String titulo, String conteudo, Date dataGeracao, String criador, Boolean valido) {
+		super();
+		this.titulo = titulo;
+		this.conteudo = conteudo;
+		this.dataGeracao = dataGeracao;
+		this.criador = criador;
+		this.valido = valido;
 	}
 
-	public static Coordenador CadastrarCoordenador(Scanner s) {
-		
-		System.out.println("Digite seu nome: ");
-		String nome = s.nextLine();
-	
-		System.out.println("Digite sua idade: ");
-		int idade = s.nextInt();
-	
-		s.nextLine(); // limpando buffer
-	
-		System.out.println("Digite seu id institucional: ");
-		String id_institucional = s.nextLine();
-		
-		System.out.println("Digite sua titulacao: ");
-		String titulacao = s.nextLine();
-		
-		System.out.println("Digite sua area de atuacao: ");
-		String areaAtuacao = s.nextLine();
-		
-		System.out.println("Digite o limite de orientados: ");
-		int limiteOrientados = s.nextInt();
-		
-		s.nextLine(); // limpando buffer
-	
-		System.out.println("Digite seu email: ");
-		String email = s.nextLine();
-	
-		System.out.println("Crie uma senha: ");
-		String senha = s.nextLine();
-	
-		return new Coordenador(nome, email, idade, senha, id_institucional, titulacao, areaAtuacao, limiteOrientados);
-	
-	}
-	
-	public static Orientador CadastrarOrientador(Scanner s) {
-
-		System.out.println("Digite seu nome: ");
-		String nome = s.nextLine();
-
-		System.out.println("Digite sua idade: ");
-		int idade = s.nextInt();
-		
-		s.nextLine(); // limpando buffer
-
-		System.out.println("Digite seu id institucional: ");
-		String id_institucional = s.nextLine();
-
-		System.out.println("Digite sua titulacao: ");
-		String titulacao = s.nextLine();
-
-		System.out.println("Digite sua area de atuacao: ");
-		String areaAtuacao = s.nextLine();
-
-		System.out.println("Digite seu limite de orientados: ");
-		int limiteOrientados = s.nextInt();
-		
-		s.nextLine(); // limpando buffer
-
-		System.out.println("Digite seu SIAPE: ");
-		String siape = s.nextLine();
-
-		System.out.println("Digite seu instituto vinculado: ");
-		String institutoVinculado = s.nextLine();
-
-		System.out.println("Digite seu email: ");
-		String email = s.nextLine();
-
-		System.out.println("Crie uma senha: ");
-		String senha = s.nextLine();
-
-		return new Orientador(nome, idade, email, senha, id_institucional, titulacao, areaAtuacao, limiteOrientados, siape, institutoVinculado);
-	
+	public String getTitulo() {
+		return titulo;
 	}
 
-	public static Gestor CadastrarGestor(Scanner s) {
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
 
-		System.out.println("Digite seu nome: ");
-		String nome = s.nextLine();
+	public String getConteudo() {
+		return conteudo;
+	}
 
-		System.out.println("Digite sua idade: ");
-		int idade = s.nextInt();
-		
-		s.nextLine(); // limpando buffer
+	public void setConteudo(String conteudo) {
+		this.conteudo = conteudo;
+	}
 
-		System.out.println("Digite seu id institucional: ");
-		String id_institucional = s.nextLine();
+	public Date getDataGeracao() {
+		return dataGeracao;
+	}
 
-		System.out.println("Digite sua titulacao: ");
-		String titulacao = s.nextLine();
+	public void setDataGeracao(Date dataGeracao) {
+		this.dataGeracao = dataGeracao;
+	}
 
-		System.out.println("Digite sua area de atuacao: ");
-		String areaAtuacao = s.nextLine();
+	public String getCriador() {
+		return criador;
+	}
 
-		System.out.println("Digite seu limite de orientados: ");
-		int limiteOrientados = s.nextInt();
-		
-		s.nextLine(); // limpando buffer
+	public void setCriador(String criador) {
+		this.criador = criador;
+	}
 
-		System.out.println("Digite seu SIAPE: ");
-		String siape = s.nextLine();
-
-		System.out.println("Digite seu instituto vinculado: ");
-		String institutoVinculado = s.nextLine();
-
-		System.out.println("Digite seu email: ");
-		String email = s.nextLine();
-
-		System.out.println("Crie uma senha: ");
-		String senha = s.nextLine();
-
-		return new Gestor(nome, idade, email, senha, id_institucional, titulacao, areaAtuacao, limiteOrientados, siape, institutoVinculado);
-	
+	public void exibirRelatorio() {
+		System.out.println("=== " + titulo.toUpperCase() + " ===");
+		System.out.println("Gerado por: " + criador);
+		System.out.println("Data: " + dataGeracao);
+		System.out.println("Conteúdo: \n" + conteudo);
+		System.out.println("===============================");
 	}
 	
-	public static Relatorio CadastrarRelatorio(Scanner s) {
-		
-		System.out.println("Digite o titulo do relatorio: ");
-		String titulo = s.nextLine();
-		
-		System.out.println("Digite o conteudo do relatorio:\n");
-		String conteudo = s.nextLine();
-		
-		Date dataGeracao = new Date();
-		
-		System.out.println("Digite seu nome: ");
-		String criador = s.nextLine();
-		
-		return new Relatorio(titulo, conteudo, dataGeracao, criador);
+	public Boolean getValido() {
+		return valido;
 	}
+	
+	public void setValido(Boolean valido) {
+		this.valido = valido;
+	}
+
 }
