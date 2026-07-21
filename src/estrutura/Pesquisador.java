@@ -64,5 +64,3 @@ public class Pesquisador extends Usuario {
 		visualizarTarefa();
 	}
 }
-
-	

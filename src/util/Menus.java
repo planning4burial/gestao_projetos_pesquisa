@@ -137,7 +137,6 @@ public class Menus {
 		}
 	}
 
-	// Método auxiliar privado de Login
 	private <T extends Autenticavel> void realizarLogin(Scanner s, List<T> listaUsuarios) {
 		System.out.println("\n--- LOGIN ---");
 		System.out.print("Digite seu email: ");
